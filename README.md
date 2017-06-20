@@ -1,13 +1,14 @@
+<img src="https://user-images.githubusercontent.com/29264214/27358784-0815d434-55cd-11e7-8ae9-957437f940dd.png" width="415" height="256" />
+
 Introduction
 --------------------
 
 ### Background
-This is my thesis project. 
-The research is funded by UA Nutriton Network
 
-The eating pattern of people in US is going under the recommended guideline.
-SNAP and SNAP-Ed helps together with people eating healthy.
-This research evaluates how SNAP and SNAP-Ed actually affects on fruit and vegetable consumption in Arizona
+Supplemental Nutrition Assistance Program (SNAP, formerly know as Food Stamp Program) is the largest domestic hunger safety net program in the United States. It has been shown that SNAP increases households’ purchasing power. However, only a quarter of Americans follow recommended healthy eating patterns. Hence, there is a question whether the additional income from SNAP transfers to healthier eating.
+
+This is my thesis project. This research is funded by [The Arizona SNAP-Ed Evaluation team](https://nutritioneval.arizona.edu/) working under [Arizona Nutrition Network](https://www.eatwellbewell.org/).
+
 
 ### Goal
 There are three goals in this project
