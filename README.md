@@ -5,10 +5,11 @@ Introduction
 
 ### Background
 
-Supplemental Nutrition Assistance Program (SNAP, formerly know as Food Stamp Program) is the largest domestic hunger safety net program in the United States. It has been shown that SNAP increases households’ purchasing power. However, only a quarter of Americans follow recommended healthy eating patterns. Hence, there is a question whether the additional income from SNAP transfers to healthier eating.
+[Supplemental Nutrition Assistance Program](https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program-snap) (SNAP, formerly know as Food Stamp Program) is the largest domestic hunger safety net program in the United States. SNAP has proven power to increase households' purchasing power. However, it is not clear that if the SNAP participants eat nutritious meals that support their health considering [only a quarter of Americans follow recommended healthy eating patterns](https://health.gov/dietaryguidelines/2015/guidelines/chapter-2/current-eating-patterns-in-the-united-states/). This research addresses a question whether the additional income from SNAP transfers to healthier eating or not.
 
-This is my thesis project. This research is funded by [The Arizona SNAP-Ed Evaluation team](https://nutritioneval.arizona.edu/) working under [Arizona Nutrition Network](https://www.eatwellbewell.org/).
+This is my thesis project. The research is funded by [The Arizona SNAP-Ed Evaluation team](https://nutritioneval.arizona.edu/) working under [Arizona Nutrition Network](https://www.eatwellbewell.org/), patnering with [ADHS](http://www.azdhs.gov/), [DES](https://des.az.gov/), and [USDA](https://www.usda.gov/).
 
+### SNAP and SNAP-Ed
 
 ### Goal
 There are three goals in this project
