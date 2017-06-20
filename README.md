@@ -1,3 +1,6 @@
+Introduction
+--------------------
+
 ### Background
 This is my thesis project. 
 The research is funded by UA Nutriton Network
@@ -15,7 +18,10 @@ There are three goals in this project
 * Figure out the characteristics of SNAP participants
 	this would be useful information to design the SNAP-Ed program
 
-### Data
+Data and Analysis
+---------------------
+
+### Dataset
 * BRFSS - survey in Arizona, 2011 and 2013
 * DES Office Distance - internal data
 * SNAP-Ed contractor - internal data
@@ -49,7 +55,8 @@ Identified the marital status and SNAP-Ed.
 Identified DES distance is significant and SNAP partner is not.
 prediction rate
 
-### Conclusion
+Conclusion
+--------------------
 - state findings
 - limitation: EARS data is desirable
 
