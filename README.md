@@ -12,11 +12,11 @@ This is my thesis research. The research is funded by [The Arizona SNAP-Ed Evalu
 ### SNAP and SNAP-Ed
 SNAP is designed to permit low-income households to access more nutritious and healthier diet through providing additional purchasing power. SNAP-Ed works with partners to provide food and nutrition education to support SNAP’s role in addressing food insecurity. While SNAP eligibility depends on individual's socioeconomic status, SNAP-Ed targets widely at people in low-income neighborhood through classes and projects.
 
-### Goal
+Goal
+-----------------------
 There are three goals in this research.
 
-(1) Identify fruit and vegetable consumption pattern of people in Arizona
-
+(1) Identify fruit and vegetable consumption patterns of people in Arizona
 
 (2) Evaluate the effect of SNAP and SNAP-Ed on fruit and vegetable consumption
 	
@@ -30,11 +30,11 @@ Data and Analysis
 ---------------------
 
 ### Dataset
-* BRFSS - survey in Arizona, 2011 and 2013
-* DES Office Distance - internal data
-* SNAP-Ed contractor - internal data
-* SNAP partner - internal data
-* Grocery store - NAICS
+* [Behabioral Risk Factor Surveillance System (BRFSS)](http://azdhs.gov/preparedness/public-health-statistics/behavioral-risk-factor-surveillance/index.php#data-code-book) - Survey Data collected in Arizona in 2011 and 2013. 
+* [Grocery store information: Census Bureau #CB1300CZ21](https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=BP_2013_00CZ2&prodType=table) - Number of grocery store in each zip code area in 2011 and 2013. Link is 2013.
+* DES Office Location - extracted from [DES office locator](https://eol.azdes.gov/)
+* SNAP-Ed contractor - AZ SNAP-Ed contractors by county in 2011 and 2013, internal data
+
 
 ### Data cleaning step
 (1) Clean zipcode in BRFSS using ASC data
