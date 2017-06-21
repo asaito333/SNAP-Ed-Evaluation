@@ -1,5 +1,10 @@
 <img src="https://user-images.githubusercontent.com/29264214/27358784-0815d434-55cd-11e7-8ae9-957437f940dd.png" width="415" height="256" />
 
+# Summary 
+
+
+
+
 Introduction
 --------------------
 
@@ -48,6 +53,20 @@ Analysis and Results
 
 ### (1) Fruit and Vegetable consumption patterns in Arizona
 
+#### histogram
+
+```SAS
+ods graphics on;
+proc surveymeans plots=none data=snaped3.snapdata mean stderr clm min max;
+	STRATA X_STSTR; CLUSTER X_PSU; WEIGHT X_LLCPWT;
+	title "F&V: eligible sample";
+	var x_frutsum x_vegesum servings;
+	run;			
+ods graphics off;
+```	
+
+*The values in table are multipled by 100. ex. 300 = eat fruits 3 times a day*
+
 * Fruit
 
 ![fruits](https://user-images.githubusercontent.com/29264214/27361798-ac59e4de-55de-11e7-841e-014bb2ea8677.png)
@@ -56,7 +75,6 @@ Analysis and Results
 | ---------| -- |-----|--------|-------|-----|------|
 | Value    |  0 |0.498|  1.006 | 1.965 | 14  |  1.42|
 
-*The values in table are multipled by 100. ex. 300 = eat fruits 3 times a day*
 
 * Vegetable
 
@@ -68,15 +86,65 @@ Analysis and Results
 
 
 * People in Arizona consume fruits 1.42 times and vegetables 2.01 times as daily average
+
+#### t-test for the difference between low-income and non-low-income subgroups
+```SAS
+proc surveyreg data=snaped3.snapdata ;
+	STRATA X_STSTR; CLUSTER X_PSU; WEIGHT X_LLCPWT;
+	title "T-test x_frutsum: elig=inelig, for whole sample";
+	class eligbroad1;
+	model x_frutsum=eligbroad1 /solution vadjust=none;
+	run;
+proc surveyreg data=snaped3.snapdata;
+	STRATA X_STSTR; CLUSTER X_PSU; WEIGHT X_LLCPWT;
+	title "T-test x_vegesum: elig=inelig, for whole sample";
+	class eligbroad1;
+	model x_vegesum=eligbroad1 /solution vadjust=none;
+	run;	
+```
 * There is a significant difference in mean value of vegetable between low-income and non-low-income subgroups
 
 
 ### (2) The effect of SNAP and SNAP-Ed on fruit and vegetable consumption
 
-(2) OLS on SNAP and SNAP-Ed
-- simple OLS regression 
-- only control, (i)grocery store (ii)SNAP-Ed contractor per poor population
-Identified the marital status and SNAP-Ed.
+#### linear regression model (OLS)
+
+(total of fruit and vegetable consumption) 
+
+= control (age/education/employment/race/marital status x gender) + SNAP + other variables 
+
+```SAS
+/* control variables + SNAP variable */
+proc surveyreg data=snaped3.eligp; STRATA X_STSTR; CLUSTER X_PSU; WEIGHT X_LLCPWT;
+	model servings=&pdemo &pinteraction fs; title "base model";
+	run;
+/* control variables + SNAP + # of grocery store */	
+proc surveyreg data=snaped3.eligp; STRATA X_STSTR; CLUSTER X_PSU; WEIGHT X_LLCPWT;
+	model servings=&pdemo &pinteraction fs allestabli; title "base + # of grocery store";
+	run;	
+/* control variables + SNAP + # of SNAP-Ed contractors per 125% poverty level population */	
+proc surveyreg data=snaped3.eligp; STRATA X_STSTR; CLUSTER X_PSU; WEIGHT X_LLCPWT;
+	model servings=&pdemo &pinteraction fs contracte1; title "base + SNAPEd per person";
+	run;		
+```
+*macro for group of variables is shown in code files*
+
+*Sample is narrowed down to low-income subgroup to avoid bias based on income*
+
+#### Results
+* SNAP has no significant effect of fruit and vegetable consumption
+
+(Original intention was to run selection model after finding significance of SNAP, but it didn't happen..)
+
+* SNAP-Ed variable is marginally significant, which suggests SNAP-Ed program is effective for more consumption of fruit and vegetable
+
+Further research with individual level data (such as [this research](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4362390/)) is needed for more accurate results
+
+* Single men consume fruit and vegetable at the lowest frequency
+* The lower the education is, the lower frequency the person eat fruit and vegetable
+
+
+### (3) Probit model
 
 (3) Probit model
 - probit model
