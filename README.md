@@ -7,12 +7,13 @@ Introduction
 
 [Supplemental Nutrition Assistance Program](https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program-snap) (SNAP, formerly know as Food Stamp Program) is the largest domestic hunger safety net program in the United States. SNAP has proven power to increase households' purchasing power. However, it is not clear that if the SNAP participants eat nutritious meals that support their health considering [only a quarter of Americans follow recommended healthy eating patterns](https://health.gov/dietaryguidelines/2015/guidelines/chapter-2/current-eating-patterns-in-the-united-states/). This research addresses a question whether the additional income from SNAP transfers to healthier eating or not.
 
-This is my thesis research. The research is funded by [The Arizona SNAP-Ed Evaluation team](https://nutritioneval.arizona.edu/) working under [Arizona Nutrition Network](https://www.eatwellbewell.org/), patnering with [ADHS](http://www.azdhs.gov/), [DES](https://des.az.gov/), and [USDA](https://www.usda.gov/).
+This is my thesis research. The research is funded by [The Arizona SNAP-Ed Evaluation team](https://nutritioneval.arizona.edu/) working under [Arizona Nutrition Network](https://www.eatwellbewell.org/), patnering with [ADHS](http://www.azdhs.gov/), [DES](https://des.az.gov/), and [USDA](https://www.usda.gov/). This README simplified the actual work of my thsis and focused only on significant results.
 
 ### SNAP and SNAP-Ed
 SNAP is designed to permit low-income households to access more nutritious and healthier diet through providing additional purchasing power. SNAP-Ed works with partners to provide food and nutrition education to support SNAP’s role in addressing food insecurity. While SNAP eligibility depends on individual's socioeconomic status, SNAP-Ed targets widely at people in low-income neighborhood through classes and projects.
 
-Goal
+
+Goals
 -----------------------
 There are three goals in this research.
 
@@ -23,31 +24,31 @@ There are three goals in this research.
 (3) Figure out the characteristics of SNAP participants
 
 * Fruit and vegetable consumption is used to measure the healthy eating pattern
+* Fruit and vegetable consumption is measured by frequency (how many times you eat ped day?), not amount
 * (3) is not directly related with the evaluation, however, the result would be important information to design SNAP-Ed outreach
 
 
-Data and Analysis
+Data
 ---------------------
 
-### Dataset
 * [Behabioral Risk Factor Surveillance System (BRFSS)](http://azdhs.gov/preparedness/public-health-statistics/behavioral-risk-factor-surveillance/index.php#data-code-book) - Survey Data collected in Arizona in 2011 and 2013. 
 * [Grocery store information: Census Bureau #CB1300CZ21](https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=BP_2013_00CZ2&prodType=table) - Number of grocery store in each zip code area in 2011 and 2013. Link is 2013.
 * DES Office Location - extracted from [DES office locator](https://eol.azdes.gov/)
 * SNAP-Ed contractor - AZ SNAP-Ed contractors by county in 2011 and 2013, internal data
 
 
-### Data cleaning step
-(1) Clean zipcode in BRFSS using ASC data
-(2) Merge (2), (4), and (5) by zipcode
-(3) Merge (3) by county
+Analysis and Results
+---------------------
 
-(4) Delete observations without fs and control variables
-(5) Delete observations with outlier value of F&V
-(6) Eligibility
+### Analysis Setting
+* Observations without SNAP status and control variables are omitted
+* Observations with outliers in fruit and vegetable consumption: who answered to eat fruits more than 16 times and vegetables 23 times a day
+* Created low-income subgroup based on [USDA SNAP eligibility criteria](https://www.fns.usda.gov/snap/eligibility)
+* All analysis is conducted with sample weighting using SAS
 
-### Analysis
+### (1) Fruit and Vegetable consumption patterns in Arizona
 
-All analysis is conducted with sample weighting. 
+* Fruit
 
 (1) Fruits and Vegetable consumption in Arizona
 - explain how to interpret the variable
