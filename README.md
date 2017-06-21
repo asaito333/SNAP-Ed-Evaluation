@@ -50,10 +50,28 @@ Analysis and Results
 
 * Fruit
 
-(1) Fruits and Vegetable consumption in Arizona
-- explain how to interpret the variable
-- histogram
-(t-test?)
+![fruits](https://user-images.githubusercontent.com/29264214/27361798-ac59e4de-55de-11e7-841e-014bb2ea8677.png)
+
+| Quartile | Min| Q1  | Median | Q3    | Max | Mean |
+| ---------| -- |-----|--------|-------|-----|------|
+| Value    |  0 |0.498|  1.006 | 1.965 | 14  |  1.42|
+
+*The values in table are multipled by 100. ex. 300 = eat fruits 3 times a day*
+
+* Vegetable
+
+![vege](https://user-images.githubusercontent.com/29264214/27361794-a703be7e-55de-11e7-88b7-30a376d0fed5.png)
+
+| Quartile | Min| Q1  | Median | Q3    | Max    | Mean |
+| ---------| -- |-----|--------|-------|--------|------|
+| Value    |  0 |1.033|  1.664 | 2.508 | 18.07  |  2.01|
+
+
+* People in Arizona consume fruits 1.42 times and vegetables 2.01 times as daily average
+* There is a significant difference in mean value of vegetable between low-income and non-low-income subgroups
+
+
+### (2) The effect of SNAP and SNAP-Ed on fruit and vegetable consumption
 
 (2) OLS on SNAP and SNAP-Ed
 - simple OLS regression 
