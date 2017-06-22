@@ -2,6 +2,12 @@
 
 # Summary 
 
+* People in Arizona eat fruit 1.4 times and vegetable 1.6 times in average per day
+* Low-income household subgroup eats statistically significant fewer vegetables than non-low-income subgroup
+* SNAP does not affect on fruit and vegetable consumption for low-income households
+* The effect of SNAP-Ed is marginally significant, however, further research is required
+* Marital status has a different effect on fruit and vegetable consumption by gender. Especially single men eat fewest fruit and vegetable.
+
 
 
 
@@ -141,19 +147,42 @@ proc surveyreg data=snaped3.eligp; STRATA X_STSTR; CLUSTER X_PSU; WEIGHT X_LLCPW
 Further research with individual level data (such as [this research](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4362390/)) is needed for more accurate results
 
 * Single men consume fruit and vegetable at the lowest frequency
+
+Compared with married women, separated male (-2.2 times), divorced male (-1.7 times), and never married male (-1.5 times) eat total of  fruit and vegetable less time in a day. 
+
 * The lower the education is, the lower frequency the person eat fruit and vegetable
 
+Compared with college grad, high school dropout (-1.1 times), high school graduate (-0.7 times), and college dropout (-0.8) eat total of fruit and vegetable less time in a day.
 
 ### (3) Probit model
 
-(3) Probit model
-- probit model
-- used DES distance and SNAP partner
-Identified DES distance is significant and SNAP partner is not.
-prediction rate
+#### probit model
 
-Conclusion
---------------------
-- state findings
-- limitation: EARS data is desirable
+Prob (SNAP=1) = control (age/education/employment/race/marital status x gender) + distance 
+
+*Distance is a variable which takes the distance between the closest DES office that authorize SNAP participation and Zipcode of survey respondent
+
+```SAS
+proc surveylogistic data=snaped3.eligp;
+	STRATA X_STSTR; CLUSTER X_PSU; WEIGHT X_LLCPWT;
+	model fs(event="1.000000000000000") = &pdemo distance / link=probit;
+	output out=model23 predicted=p23;
+	run;
+```
+
+#### Results
+
+* The farther the respondent lives from DES office, the more likely s/he participates in SNAP
+* The younger s/he is, the more likely s/he participates in SNAP
+* The less the education is, the more likely s/he participates in SNAP
+* Single men participates in SNAP than married women
+
+
+
+
+Limitation
+---------------------
+* Technical problems: how to build machine learning model with sample weighting? 
+* Data availability: individual level data for SNAP-Ed participation shoud be used for analysis
+* Data quality: does frequency of eating measure the healthy eating?
 
